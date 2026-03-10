@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Julia Pereira | Digital Marketer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Portfolio of Julia Pereira, results-driven Digital Marketer and Social Media Manager specializing in the Kenyan market."
+  />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --accent: #ff7a3c;
+      --accent-soft: rgba(255, 122, 60, 0.1);
+      --accent-2: #36cfc9;
+      --text-main: #f6f7fb;
+      --text-muted: #a3adc2;
+      --card-bg: #10182b;
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.45);
+      --shadow-glow: 0 0 40px rgba(255, 122, 60, 0.3);
+      --transition: 220ms ease;
+      --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: radial-gradient(circle at top left, #182144 0, #050816 55%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 8, 22, 0.95),
+        rgba(5, 8, 22, 0.85),
+        transparent
+      );
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 10% 0, #ffcf71, #ff7a3c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #1a1f35;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand-text span:first-child {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+
+    .brand-text span:last-child {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .badge-live {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(54, 207, 201, 0.12);
+      border: 1px solid rgba(54, 207, 201, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #e0fbff;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-kicker {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      color: var(--accent-2);
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 2.7vw, 2.1rem);
+      letter-spacing: 0.04em;
+    }
+
+    .section-subtitle {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.8fr);
+      gap: 3rem;
+      align-items: center;
+      padding-top: 6rem;
+      padding-bottom: 3.5rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      color: var(--accent-2);
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.3rem, 4vw, 3.1rem);
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-name {
+      background: linear-gradient(120deg, #ffcf71, #ff7a3c, #ff5e8a);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-role {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-body {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      max-width: 560px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-body strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      backdrop-filter: blur(12px);
+      background: rgba(10, 16, 35, 0.7);
+    }
+
+    .pill.primary {
+      background: var(--accent-soft);
+      border-color: rgba(255, 122, 60, 0.7);
+      color: #ffd8c4;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      transition: background var(--transition), color var(--transition),
+        transform var(--transition), box-shadow var(--transition),
+        border-color var(--transition);
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, #ffcf71, #ff7a3c);
+      color: #1a1f35;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 38px rgba(255, 122, 60, 0.55);
+    }
+
+    .btn-ghost {
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(12, 18, 40, 0.85);
+      color: var(--text-main);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(17, 25, 58, 0.95);
+      transform: translateY(-1px);
+    }
+
+    .btn-icon {
+      font-size: 1.1rem;
+    }
+
+    .hero-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta span {
+      color: #e4f3ff;
+      font-weight: 500;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 1.4rem;
+      border-radius: calc(var(--radius-lg) * 1.2);
+      background: radial-gradient(circle at top left, #273362, #10182b 40%, #050816);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      overflow: hidden;
+      min-height: 320px;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: -30%;
+      background:
+        radial-gradient(circle at 20% 0, rgba(255, 122, 60, 0.2), transparent 60%),
+        radial-gradient(circle at 80% 100%, rgba(54, 207, 201, 0.18), transparent 58%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .hero-stats {
+      position: relative;
+      display: grid;
+      gap: 1rem;
+      z-index: 1;
+    }
+
+    .hero-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .hero-highlight {
+      font-size: 1.65rem;
+      font-weight: 600;
+    }
+
+    .hero-highlight span {
+      color: #ffc78f;
+    }
+
+    .hero-list {
+      display: grid;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .metric-row strong {
+      color: #e4f3ff;
+      font-weight: 600;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.9rem;
+    }
+
+    .hero-chip {
+      font-size: 0.76rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(5, 8, 22, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-muted);
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      right: 0.3rem;
+      bottom: 0.3rem;
+      padding: 0.6rem 0.9rem;
+      border-radius: calc(var(--radius-lg) * 0.9);
+      background: rgba(4, 10, 30, 0.93);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(16px);
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      max-width: 220px;
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .hero-floating-card span {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-2);
+    }
+
+    /* HERO (LAYOUT CONTAINER) */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.8fr);
+      gap: 3rem;
+      align-items: center;
+      padding-top: 6rem;
+      padding-bottom: 3.5rem;
+    }
+
+    /* SERVICES / HIGHLIGHTS */
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, #1b2340, #050816 55%);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.4rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(255, 122, 60, 0.12), transparent 60%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-kicker {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent-2);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-body {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: rgba(227, 237, 255, 0.9);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .list-dot {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.4rem 0 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .list-dot li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .list-dot li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-2);
+      font-size: 0.9rem;
+    }
+
+    /* FULL WIDTH ROWS */
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+      gap: 2rem;
+    }
+
+    .stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .pill-small {
+      font-size: 0.76rem;
+      padding: 0.24rem 0.65rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--text-muted);
+      background: rgba(7, 12, 30, 0.9);
+    }
+
+    .tag-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-2);
+      margin-bottom: 0.3rem;
+    }
+
+    .tag-heading {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .tag-sub {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* TESTIMONIALS & CERTS */
+
+    .quote-card {
+      background: radial-gradient(circle at top left, #222b4c, #050816 60%);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.4rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .quote-mark {
+      font-size: 2.5rem;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.22);
+    }
+
+    .quote-text {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .quote-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem 1.4rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .cert-item span {
+      display: block;
+    }
+
+    .cert-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(227, 237, 255, 0.8);
+    }
+
+    .cert-name {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    /* CONTACT */
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+      gap: 1.8rem;
+      background: radial-gradient(circle at top left, #242f57, #050816 60%);
+      border-radius: calc(var(--radius-lg) * 1.1);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1.6rem 1.5rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-details {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .contact-row {
+      display: grid;
+      gap: 0.1rem;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(227, 237, 255, 0.8);
+    }
+
+    .contact-value {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .contact-cta {
+      display: grid;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .contact-cta strong {
+      color: #e4f3ff;
+    }
+
+    footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    footer span {
+      opacity: 0.9;
+    }
+
+    footer strong {
+      color: #e4f3ff;
+      font-weight: 500;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .grid-2,
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+
+      .section {
+        padding-inline: 1.1rem;
+      }
+
+      .hero {
+        padding-top: 5.2rem;
+      }
+
+      .contact-card {
+        padding: 1.3rem 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <div class="nav-brand">
+          <div class="brand-avatar">JP</div>
+          <div class="brand-text">
+            <span>Digital Marketing</span>
+            <span>Julia Pereira</span>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#clients">Clients</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+          <span class="badge-live">2026 Portfolio</span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="section hero" id="top">
+        <div>
+          <div class="hero-tagline">Results-driven digital marketing</div>
+          <h1 class="hero-title">
+            I&apos;m <span class="hero-name">Julia Pereira</span>
+          </h1>
+          <div class="hero-role">Digital Marketer • Social Media Manager</div>
+          <p class="hero-body">
+            I help brands in the Kenyan market
+            <strong>grow their online presence, generate qualified leads, and increase sales</strong>
+            through data-driven digital marketing. I combine strategic content, paid advertising,
+            and performance optimization to turn your audience into loyal customers.
+          </p>
+
+          <div class="hero-pills">
+            <span class="pill primary">Brand growth campaigns</span>
+            <span class="pill">Lead generation funnels</span>
+            <span class="pill">Product launch campaigns</span>
+            <span class="pill">Kenyan market expertise</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              <span>Contact Me</span>
+              <span class="btn-icon">↗</span>
+            </a>
+            <a href="#projects" class="btn btn-ghost">
+              <span>See My Work</span>
+            </a>
+            <div class="hero-meta">
+              Or reach me directly at <span>juliapereirafp@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-right" aria-hidden="true">
+          <div class="hero-card">
+            <div class="hero-orbit"></div>
+            <div class="hero-stats">
+              <div>
+                <div class="hero-label">Core focus</div>
+                <div class="hero-highlight">
+                  Building <span>profitable digital campaigns</span>
+                </div>
+                <div class="hero-list">
+                  <span>• Social media growth & brand visibility</span>
+                  <span>• Paid ads that convert into sales</span>
+                  <span>• Full-funnel lead generation systems</span>
+                </div>
+              </div>
+              <div>
+                <div class="hero-label">Performance mindset</div>
+                <div class="metric-row">
+                  <span>Campaigns optimized around</span>
+                  <strong>Cost per lead & revenue</strong>
+                </div>
+                <div class="hero-chip-row">
+                  <span class="hero-chip">Meta Business Suite</span>
+                  <span class="hero-chip">Google Ads</span>
+                  <span class="hero-chip">TikTok Ads</span>
+                </div>
+              </div>
+              <div class="hero-floating-card">
+                <span>Kenyan Market</span>
+                <div>
+                  Local insight, global standards. I design campaigns tailored to Kenyan audiences while
+                  keeping your brand competitive on a global level.
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- ABOUT & HIGHLIGHT CAMPAIGNS -->
+      <section class="section" id="about">
+        <div class="section-header">
+          <div class="section-kicker">About Julia</div>
+          <h2 class="section-title">Digital marketer focused on measurable growth.</h2>
+          <p class="section-subtitle">
+            I specialize in building integrated campaigns that grow your brand, attract qualified leads,
+            and convert them into paying customers.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-kicker">Brand Growth Campaign</div>
+            <h3 class="card-title">3‑month social media growth strategy</h3>
+            <p class="card-body">
+              Developed a focused social media campaign that increased engagement, boosted brand
+              visibility, and generated consistent inbound leads through targeted ads and optimized,
+              audience-specific content.
+            </p>
+            <div class="card-meta">Focus: Engagement • Visibility • Inbound leads</div>
+          </article>
+
+          <article class="card">
+            <div class="card-kicker">Lead Generation Campaign</div>
+            <h3 class="card-title">High‑intent lead funnel</h3>
+            <p class="card-body">
+              Designed a performance-driven funnel combining social ads with tailored landing pages,
+              generating qualified leads at a reduced cost per acquisition while improving conversion
+              quality.
+            </p>
+            <div class="card-meta">Focus: Qualified leads • Lower CPA</div>
+          </article>
+
+          <article class="card">
+            <div class="card-kicker">Product Launch Campaign</div>
+            <h3 class="card-title">Paid launch with segmented audiences</h3>
+            <p class="card-body">
+              Executed a launch campaign with precise audience segmentation, resulting in high reach,
+              strong engagement, and measurable sales growth within the first month of going live.
+            </p>
+            <div class="card-meta">Focus: Launch impact • Measurable sales</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SERVICES & TOOLS -->
+      <section class="section" id="services">
+        <div class="section-header">
+          <div class="section-kicker">Services Offered</div>
+          <h2 class="section-title">End‑to‑end digital marketing for growth‑driven brands.</h2>
+          <p class="section-subtitle">
+            From strategy and execution to reporting and optimization, I support your brand across the
+            full digital customer journey.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="stack">
+            <article class="card">
+              <h3 class="card-title">Campaign Strategy & Execution</h3>
+              <p class="card-body">
+                Build campaigns that are aligned with your business goals and tailored to your audience.
+              </p>
+              <ul class="list-dot">
+                <li>Social media account setup & ongoing management</li>
+                <li>Paid advertising campaign management (Meta, Google, TikTok)</li>
+                <li>Brand positioning & long‑term growth strategy</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">Content, SEO & Lead Generation</h3>
+              <p class="card-body">
+                Turn content and search into a predictable source of traffic and leads.
+              </p>
+              <ul class="list-dot">
+                <li>Content strategy & conversion‑focused copywriting</li>
+                <li>SEO optimization for visibility and search intent</li>
+                <li>Lead generation campaigns and landing page funnels</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">Email & Automation</h3>
+              <p class="card-body">
+                Nurture and convert leads with thoughtful email journeys and automation.
+              </p>
+              <ul class="list-dot">
+                <li>Email marketing campaign planning & execution</li>
+                <li>Marketing automation setup and optimization</li>
+                <li>Analytics reporting & performance optimization</li>
+              </ul>
+            </article>
+          </div>
+
+          <aside class="stack">
+            <div>
+              <div class="tag-label">Tools & Platforms</div>
+              <div class="pill-row">
+                <span class="pill-small">Meta Business Suite</span>
+                <span class="pill-small">Google Analytics</span>
+                <span class="pill-small">Google Ads</span>
+                <span class="pill-small">TikTok Ads Manager</span>
+                <span class="pill-small">Canva</span>
+                <span class="pill-small">CapCut</span>
+                <span class="pill-small">Hootsuite / Buffer</span>
+                <span class="pill-small">Mailchimp</span>
+                <span class="pill-small">HubSpot (CRM & Email)</span>
+                <span class="pill-small">Zoho CRM</span>
+                <span class="pill-small">Sendinblue</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- RECENT PROJECTS -->
+      <section class="section" id="projects">
+        <div class="section-header">
+          <div class="section-kicker">Recent Projects</div>
+          <h2 class="section-title">Selected work across campaigns, web, and automation.</h2>
+          <p class="section-subtitle">
+            A snapshot of the types of results‑oriented projects I design and manage for clients.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="stack">
+            <article class="card">
+              <div class="card-kicker">Meta Business Suite</div>
+              <h3 class="card-title">Brand awareness campaign</h3>
+              <p class="card-body">
+                Planned and executed a brand awareness campaign using Meta Business Suite, focusing on
+                reach, engagement, and frequency to build recognition and trust within the target
+                audience.
+              </p>
+              <div class="card-meta">Channel: Paid social</div>
+            </article>
+
+            <article class="card">
+              <div class="card-kicker">Lead Generation</div>
+              <h3 class="card-title">Conversion‑driven ad campaigns</h3>
+              <p class="card-body">
+                Managed paid advertising campaigns designed to capture high‑intent leads, with
+                continuous optimization of creatives, targeting, and budgets.
+              </p>
+              <div class="card-meta">Goal: Qualified leads • Lower CPL</div>
+            </article>
+          </div>
+
+          <div class="stack">
+            <article class="card">
+              <div class="card-kicker">Product Launch</div>
+              <h3 class="card-title">Digital launch campaign</h3>
+              <p class="card-body">
+                Orchestrated a digital product launch across social media and paid ads, ensuring
+                compelling creative, clear messaging, and smooth user journeys from ad to conversion.
+              </p>
+              <div class="card-meta">Focus: Launch visibility & sales</div>
+            </article>
+
+            <article class="card">
+              <div class="card-kicker">Web & SEO</div>
+              <h3 class="card-title">Website design & SEO optimization</h3>
+              <p class="card-body">
+                Supported web projects focused on clean UX, clear messaging, and search visibility,
+                aligning landing pages with campaign objectives and SEO best practices.
+              </p>
+              <div class="card-meta">Goal: Organic visibility • On‑site conversion</div>
+            </article>
+
+            <article class="card">
+              <div class="card-kicker">Email & Automation</div>
+              <h3 class="card-title">Email marketing & automation setup</h3>
+              <p class="card-body">
+                Implemented email marketing campaigns and automation workflows to nurture leads and
+                retain customers, integrated with CRM platforms such as HubSpot and Zoho.
+              </p>
+              <div class="card-meta">Goal: Retention • Lifetime value</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLIENTS & TESTIMONIALS -->
+      <section class="section" id="clients">
+        <div class="section-header">
+          <div class="section-kicker">Happy Clients</div>
+          <h2 class="section-title">What clients say about working together.</h2>
+          <p class="section-subtitle">
+            I partner with forward‑thinking businesses that are ready to grow their digital presence and
+            track real results.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="quote-card">
+            <div class="quote-mark">“</div>
+            <p class="quote-text">
+              Professional, strategic, and results‑driven. Our online engagement and sales improved
+              significantly within months.
+            </p>
+            <div class="quote-meta">Keynote Systems • Digital Marketing Client</div>
+          </article>
+
+          <article class="quote-card">
+            <div class="quote-mark">“</div>
+            <p class="quote-text">
+              Excellent communication and deep understanding of the Kenyan market. Highly recommended
+              for paid ads and lead generation.
+            </p>
+            <div class="quote-meta">Bingwa Services • Lead Generation Client</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section class="section" id="certifications">
+        <div class="section-header">
+          <div class="section-kicker">Certifications</div>
+          <h2 class="section-title">Certified in key areas of digital marketing.</h2>
+          <p class="section-subtitle">
+            I continuously invest in learning to keep your campaigns aligned with best practices and the
+            latest platform updates.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="cert-grid">
+            <div class="cert-item">
+              <span class="cert-label">Certification</span>
+              <span class="cert-name">Digital Marketing &mdash; HubSpot</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-label">Certification</span>
+              <span class="cert-name">Google Analytics Certification</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-label">Certification</span>
+              <span class="cert-name">Meta Certified Digital Marketing Associate</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-label">Certification</span>
+              <span class="cert-name">Email Marketing &mdash; HubSpot</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-label">Certification</span>
+              <span class="cert-name">Search Engine Optimization &mdash; HubSpot</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <div class="section-header">
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Let&apos;s grow your digital presence.</h2>
+          <p class="section-subtitle">
+            I&apos;m excited to support brands ready to invest in sustainable, performance‑driven digital
+            marketing.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-details">
+            <div class="contact-row">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">
+                <a href="mailto:juliapereirafp@gmail.com">juliapereirafp@gmail.com</a>
+              </span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">
+                <a href="tel:+254713727004">+254&nbsp;713&nbsp;727&nbsp;004</a>
+              </span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-label">Website</span>
+              <span class="contact-value">
+                <a href="https://www.juliapereira.com" target="_blank" rel="noreferrer">
+                  www.juliapereira.com
+                </a>
+              </span>
+            </div>
+          </div>
+
+          <div class="contact-cta">
+            <p>
+              <strong>Thank you</strong> for reviewing my 2026 digital marketing portfolio. I look
+              forward to partnering with businesses that are serious about growth, quality leads, and
+              measurable results.
+            </p>
+            <p>
+              Share a bit about your brand, your audience, and your goals, and I&apos;ll propose a
+              tailored digital marketing plan for you.
+            </p>
+            <div class="hero-actions">
+              <a href="mailto:juliapereirafp@gmail.com" class="btn btn-primary">
+                <span>Contact Me</span>
+                <span class="btn-icon">✉</span>
+              </a>
+              <a href="#projects" class="btn btn-ghost">
+                <span>See More of My Work</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>&copy; 2026 Portfolio Digital Marketing &mdash; <strong>Julia Pereira</strong></span>
+      <span>Ready for: brand growth • lead generation • product launches.</span>
+    </footer>
+  </div>
+</body>
+</html>
